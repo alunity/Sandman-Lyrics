@@ -1,5 +1,5 @@
 let audio = new Audio("./music/EnterSandman(Remastered).mp3");
-audio.currentTime = 270;
+audio.currentTime = 69;
 
 let play = document.getElementById("play");
 let pause = document.getElementById("pause");
@@ -10,16 +10,40 @@ pause.addEventListener("click", () => audio.pause());
 
 function display(start, number) {
   lyricsElement.innerHTML = "";
-  for (let i = 0; i < number; i++) {
+  lyricsElement.className = "";
+  for (let i = 0; i < number + 1; i++) {
     try {
-      let p = document.createElement("p");
-      p.innerHTML = lyrics[i + start].lyrics;
+      let p = document.createElement("h3");
+      p.innerHTML = lyrics[i + start - 1].lyrics;
 
       if (i == 0) {
+        p.classList.add("fadeIn");
         p.classList.add("color4");
-        p.classList.add("bold");
+
+        setTimeout(() => {
+          p.classList.remove("fadeIn");
+          p.classList.add("fadeOut");
+        }, 1);
+        setTimeout(() => {
+          p.classList.add("displayNone");
+        }, 1000);
       } else if (i == 1) {
         p.classList.add("color3");
+        setTimeout(() => {
+          p.classList.remove("color3");
+          p.classList.add("color4");
+        }, 1);
+      } else if (i == 2) {
+        p.classList.add("color3");
+      } else if (i == number) {
+        p.classList.add("fadeOut");
+        p.classList.add("color1");
+        setTimeout(() => {
+          p.classList.remove("fadeOut");
+          p.classList.remove("color1");
+          p.classList.add("fadeIn");
+          p.classList.add("color2");
+        }, 300);
       } else {
         p.classList.add("color2");
       }
@@ -27,8 +51,16 @@ function display(start, number) {
       lyricsElement.appendChild(p);
     } catch {
       // Not enough elements to fufil number
+      if (start == 0) {
+        let p = document.createElement("h3");
+        p.innerHTML = "&nbsp;";
+        lyricsElement.appendChild(p);
+      }
     }
   }
+  setTimeout(() => {
+    lyricsElement.classList.add("shiftUp");
+  }, 1);
 }
 
 function getCurrentIndex() {

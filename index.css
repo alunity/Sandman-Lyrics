@@ -17,14 +17,31 @@ body {
 }
 .color3 {
   color: #8468a8;
+  transition: 0.5s ease-in;
 }
 .color4 {
   color: #d48cd8;
+  transition: 0.5s ease-in;
 }
 .color5 {
   color: #f8afed;
 }
 
-.bold {
-  font-weight: bold;
+.fadeOut {
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: 1s ease-in;
+}
+
+.shiftUp {
+  transform: translateY(-10vh);
+  transition: 1s ease-in;
+}
+
+.displayNone {
+  pointer-events: none;
 }
