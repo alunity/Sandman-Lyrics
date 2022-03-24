@@ -1,5 +1,5 @@
 let audio = new Audio("./music/EnterSandman(Remastered).mp3");
-audio.currentTime = 69;
+audio.currentTime = 0;
 
 let play = document.getElementById("play");
 let pause = document.getElementById("pause");
