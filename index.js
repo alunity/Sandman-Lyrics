@@ -24,9 +24,6 @@ function display(start, number) {
           p.classList.remove("fadeIn");
           p.classList.add("fadeOut");
         }, 1);
-        setTimeout(() => {
-          p.classList.add("displayNone");
-        }, 1000);
       } else if (i == 1) {
         p.classList.add("color3");
         setTimeout(() => {

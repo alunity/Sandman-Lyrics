@@ -38,7 +38,7 @@ body {
 }
 
 .shiftUp {
-  transform: translateY(-6.4vh);
+  transform: translateY(-2.475em);
   transition: 1s ease-in;
 }
 
