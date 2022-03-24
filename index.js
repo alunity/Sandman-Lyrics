@@ -1,12 +1,14 @@
 let audio = new Audio("./music/EnterSandman(Remastered).mp3");
-audio.currentTime = 0;
+audio.currentTime = 79;
 
 let play = document.getElementById("play");
 let pause = document.getElementById("pause");
+let restart = document.getElementById("restart");
 let lyricsElement = document.getElementById("lyrics");
 
 play.addEventListener("click", () => audio.play());
 pause.addEventListener("click", () => audio.pause());
+restart.addEventListener("click", () => audio.currentTime = 0);
 
 function display(start, number) {
   lyricsElement.innerHTML = "";
