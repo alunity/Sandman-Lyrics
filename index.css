@@ -29,17 +29,17 @@ body {
 
 .fadeOut {
   opacity: 0;
-  transition: 1s ease-in;
+  transition: 0.25s ease-in;
 }
 
 .fadeIn {
   opacity: 1;
-  transition: 1s ease-in;
+  transition: 0.25s ease-in;
 }
 
 .shiftUp {
   transform: translateY(-2.475em);
-  transition: 1s ease-in;
+  transition: 0.25s ease-in;
 }
 
 .displayNone {
